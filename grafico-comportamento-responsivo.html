@@ -30,19 +30,24 @@
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
-      aspect-ratio: 4 / 3;
+      height: 400px;
     }
+
+    @media (max-width: 767px) {
+      .grafico-container {
+        height: 500px;
+      }
+    }
+
     canvas {
       width: 100% !important;
-      height: auto !important;
+      height: 100% !important;
     }
   </style>
 </head>
 <body>
   <h1>Com base nas suas respostas, este é o passo certo para transformar o comportamento do seu filho</h1>
-  <p class="subtitulo">
-    Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.
-  </p>
+  <p class="subtitulo">Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.</p>
 
   <div class="grafico-container">
     <canvas id="graficoComportamento"></canvas>
@@ -70,16 +75,11 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
-        layout: {
-          padding: {
-            top: 40 // ✅ espaço extra para não cortar o rótulo "SEM BIRRA"
-          }
-        },
+        maintainAspectRatio: false,
         plugins: {
           tooltip: {
             callbacks: {
-              label: function (context) {
+              label: function(context) {
                 const labels = [
                   'VOCÊ AGORA',
                   'ME OBEDECE',
@@ -95,21 +95,21 @@
             display: false
           },
           datalabels: {
-            anchor: 'end',
-            align: 'top',
-            offset: 8,
+            anchor: 'center',
+            align: 'bottom',
+            offset: 4,
             font: {
               weight: 'bold',
               size: 10
             },
             color: '#BB443D',
-            formatter: function (value, context) {
+            formatter: function(value, context) {
               const labels = [
-                'VOCÊ AGORA',
-                'ME OBEDECE',
-                'PAROU DE SER AGRESSIVO',
-                'SEM BIRRA',
-                'FILHO GENTIL E EDUCADO'
+                'VOCÊ\nAGORA',
+                'ME\nOBEDECE',
+                'PAROU DE\nSER AGRESSIVO',
+                'SEM\nBIRRA',
+                'FILHO GENTIL\nE EDUCADO'
               ];
               return labels[context.dataIndex];
             }
@@ -136,6 +136,4 @@
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
-</body>
-</html>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js
