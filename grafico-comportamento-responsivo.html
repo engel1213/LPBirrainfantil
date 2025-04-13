@@ -30,21 +30,17 @@
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
-      aspect-ratio: 4 / 3;
+      height: 600px;
     }
     canvas {
       width: 100% !important;
-      height: auto !important;
+      height: 100% !important;
     }
   </style>
 </head>
 <body>
-  <h1>
-    Com base nas suas respostas, este é o passo certo para transformar o comportamento do seu filho
-  </h1>
-  <p class="subtitulo">
-    Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.
-  </p>
+  <h1>Com base nas suas respostas, este é o passo certo para transformar o comportamento do seu filho</h1>
+  <p class="subtitulo">Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.</p>
 
   <div class="grafico-container">
     <canvas id="graficoComportamento"></canvas>
@@ -72,7 +68,7 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
           tooltip: {
             callbacks: {
@@ -102,11 +98,11 @@
             color: '#BB443D',
             formatter: function(value, context) {
               const labels = [
-                'VOCÊ\nAGORA',
-                'ME\nOBEDECE',
-                'PAROU DE\nSER AGRESSIVO',
-                'SEM\nBIRRA',
-                'FILHO GENTIL\nE EDUCADO'
+                'VOCÊ\\nAGORA',
+                'ME\\nOBEDECE',
+                'PAROU DE\\nSER AGRESSIVO',
+                'SEM\\nBIRRA',
+                'FILHO GENTIL\\nE EDUCADO'
               ];
               return labels[context.dataIndex];
             }
@@ -115,17 +111,11 @@
         scales: {
           y: {
             beginAtZero: true,
-            ticks: {
-              display: false
-            },
-            grid: {
-              display: false
-            }
+            ticks: { display: false },
+            grid: { display: false }
           },
           x: {
-            grid: {
-              display: false
-            }
+            grid: { display: false }
           }
         }
       },
@@ -133,7 +123,6 @@
     });
   </script>
 
-  <!-- Para iframe-resizer funcionar -->
   <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
 </body>
 </html>
