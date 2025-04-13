@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Evolução do Comportamento</title>
+  <meta charset="UTF-8" />
+  <title>Gráfico de Comportamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
@@ -30,24 +30,21 @@
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
-      height: 400px;
+      aspect-ratio: 4 / 3;
     }
-
-    @media (max-width: 767px) {
-      .grafico-container {
-        height: 500px;
-      }
-    }
-
     canvas {
       width: 100% !important;
-      height: 100% !important;
+      height: auto !important;
     }
   </style>
 </head>
 <body>
-  <h1>Com base nas suas respostas, este é o passo certo para transformar o comportamento do seu filho</h1>
-  <p class="subtitulo">Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.</p>
+  <h1>
+    Com base nas suas respostas, este é o passo certo para transformar o comportamento do seu filho
+  </h1>
+  <p class="subtitulo">
+    Aplique o guia <strong style="color: #BB443D;">ainda hoje</strong> e veja os primeiros sinais de mudança em poucos dias — mais calma, obediência e leveza na sua rotina.
+  </p>
 
   <div class="grafico-container">
     <canvas id="graficoComportamento"></canvas>
@@ -75,7 +72,7 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
           tooltip: {
             callbacks: {
@@ -95,9 +92,9 @@
             display: false
           },
           datalabels: {
-            anchor: 'center',
-            align: 'bottom',
-            offset: 4,
+            anchor: 'end',
+            align: 'top',
+            offset: 16,
             font: {
               weight: 'bold',
               size: 10
@@ -136,4 +133,7 @@
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js
+  <!-- Para iframe-resizer funcionar -->
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.contentWindow.min.js"></script>
+</body>
+</html>
